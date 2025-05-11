@@ -24,7 +24,6 @@ if __name__ == "__main__":
     logger = get_logger(__name__)
     logger.info("Scraper Started")
     scheduler = BlockingScheduler()
-    scheduler.add_job(run_sync_job, trigger=IntervalTrigger(minutes=10), id='run_campground_job', replace_existing=True)
+    scheduler.add_job(run_sync_job, trigger=IntervalTrigger(hours=4), id='run_campground_job', replace_existing=True)
     logger.info("Scheduler started")  
-    run_sync_job() 
     scheduler.start()
