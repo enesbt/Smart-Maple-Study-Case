@@ -63,7 +63,7 @@ Returns details of a specific campground (local database)
 
 These services can be easily managed with Docker Compose and start automatically when the project is initialized.
 
-🧠 Scrape Mechanism
+## 🧠 Scrape Mechanism
 - The U.S. map is divided into 1x1 degree bounding boxes, and for each bbox, a request is sent to The Dyrt API (https://thedyrt.com/api/v6/locations/search-results).
 - Requests are made concurrently, using asyncio.Semaphore(5) to allow up to 5 simultaneous calls.
 - Each API response is validated using pydantic and stored in the database via a SQLAlchemy model.
